@@ -1,0 +1,375 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  background-color:#0b33a4;
+  color: white;
+}
+
+.header-top {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Căn giữa trên-dưới */
+  padding: 10px 30px;
+  height: 120px;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  
+ 
+}
+
+.header-logo img {
+  height: 70px;        /* Đảm bảo logo không quá to */
+  margin-left: 5px;
+  width: auto;
+}
+
+.header-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;           /* Khoảng cách giữa các icon */
+  margin-right: 100px;
+}
+
+.header-social img {
+  height: 30px;        /* Đặt kích thước icon đồng đều */
+}
+
+/* MENU */
+nav {
+  background-color: #235fd5;
+}
+.main-nav {
+  color: orange;
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  font-weight: bold; /* 👈 Thêm dòng này để in đậm */
+}
+
+.menu li {
+  position: relative;
+  margin: 0 15px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+}
+
+.menu li:hover > a {
+  background-color: #0b33a4;
+}
+
+.dropdown {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  background-color: #0b33a4;
+  list-style: none;
+  padding: 0;
+  min-width: 180px;
+  z-index: 999;
+}
+
+.menu li:hover .dropdown {
+  display: block;
+}
+
+.dropdown li a {
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+/* SLIDER */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.slides {
+  display: flex;
+  width: 100%; /* = 100% * số slide */
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  height: 700px;
+  display: none;
+}
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Nút điều hướng */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  border-radius: 4px;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.6);
+}
+/* CONTENT */
+.section-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+  position: relative;
+  display: inline-block;
+  margin: 60px auto 20px auto; /* Khoảng cách phía trên */
+  text-transform: uppercase;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 60px;
+  background-color: #444;
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+}
+.section-title1 ::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 60px;
+  background-color: #444;
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+}
+
+
+/* FOOTER */
+footer {
+  background-color: #0b33a4;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 120px ;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-col {
+  flex: 1 1 200px;
+}
+
+.footer-col.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-col.logo img {
+  height: 50px;
+ 
+}
+.footer-col h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: orange;
+}
+
+.footer-col p, .footer-col a {
+  font-size: 14px;
+  color: white;
+  line-height: 1.6;
+}
+
+/* Slider Container */
+.slider_1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    max-height: 470px; 
+    margin: 20px auto 0; /* Cách menu 30px */
+    padding: 0 20px;
+    gap: 30px;
+    overflow: hidden;
+  }
+  /* Slide wrapper */
+  .slides_1 {
+  
+    max-width: 480px;
+    overflow: hidden;
+    border-radius: 10px;
+    gap: 60px;
+  }
+  
+  /* Slide */
+  .slide_1 {
+    flex-shrink: 0; /* tránh tràn */
+    position: relative;
+    display: none;
+    width: 100%;
+    height: auto;
+    animation: fadeIn 1s ease-in-out;
+  }
+  .slide_1.active {
+    display: block;
+  }
+  
+  /* Ảnh trong Slide */
+  .slide_1 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* Caption */
+  .caption {
+    flex: 1;
+    max-width: 600px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .caption h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .caption p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .caption ul {
+    padding-left: 20px;
+  }
+  
+  .caption ul li {
+    font-size: 16px;
+    margin-bottom: 6px;
+    list-style-type: disc;
+    text-align: justify;
+  }
+  /* Quy mô - Thống kê */
+  .charts {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .charts h3 {
+    margin-top: 40px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .charts .normal-text {
+    text-transform: none;
+    color: #444;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .charts-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .chart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px;
+    text-align: center;
+  }
+  
+  .chart-item img {
+    width: 180px;
+    height: auto;
+    margin: 10px 0;
+  }
+  
+  .chart-item p {
+    font-size: 14px;
+    margin: 4px 0;
+  }
+  
+  .item-title {
+    margin-bottom: 5px;
+  }
+
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chart-item {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-item {
+    flex: 1 1 100%;
+  }
+
+  .prev, .next {
+    font-size: 1.5rem;
+  }
+}
